@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="" />
+  <title>Project Readme</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Diagnostics Feed</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+					crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.5/jquery.csv.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+
+	<link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+					crossorigin="anonymous">
+					
+		
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-rating/1.5.0/bootstrap-rating.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/sugar/2.0.6/sugar.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.2.2/dist/latest/bootstrap-autocomplete.min.js"></script>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-rating/1.5.0/bootstrap-rating.css"></link>
+
+</head>
+<body>
+  <div class="container">
+    <div class="col-md-2">
+    </div>
+    <div class="col-xs-6">
+<header id="title-block-header">
+<h1 class="title">Resolving Inaccurate Sensors</h1>
+</header>
+<h1 id="inaccurate-sensors">Inaccurate Sensors</h1>
+<h2 id="glucose-range-checker">Glucose Range Checker</h2>
+<p>Authors:</p>
+<ul>
+<li>Sasri Dedigama</li>
+<li>Gabriel</li>
+<li>Jasmine</li>
+<li>Reveen</li>
+</ul>
+<h2 id="problem">Problem:</h2>
+<h2 id="storyboard">Storyboard</h2>
+<h2 id="solution-coachable-moments">Solution: Coachable Moments</h2>
+<h2 id="description">Description</h2>
+<p><a href="./glucose-range-checker/">glucose-range-checker</a> A way to “start the sensor replacement workflow” for replacing sensor due to extended inaccurate sensor.</p>
+<ul>
+<li>On-demand, any time a fingerstick value can be compared against CGM to compare against 20/20 and 30/30</li>
+<li>If inaccurate, worfklow consists of 3 hour set of tasks to:</li>
+<li>wash, clean hands</li>
+<li>perform fingerstick, compare with the checker</li>
+<li>perform calibration and repeat once per hour</li>
+<li>If all steps completed and still inaccurate, link into sensor replacement.</li>
+</ul>
+<p><a href="https://bitbucket.org/madkinn/resocenter/pull-requests/new?source=dev/glucose-range-checker/index&amp;dest=releases/glucose-range-checker/master&amp;t=1">Pull request for glucose range checker</a></p>
+       <h2><a href="https://www.figma.com/file/qhrdFLdC9GkaIFBUZXpGJB/DDI-Range-Page?node-id=0%3A1">Figma Wireframes</a> </h2> 
+       <h2><a href="resocenter.html">Demo</a> </h2> 
+       <h2><a href="https://bitbucket.org/madkinn/resocenter/src/efe7e5f51200b2d3af1dcb2e901c4692e39420be/?at=dev%2Fglucose-range-checker%2Findex">Code</a> </h2> 
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var Page = {
+
+      root: '.current.feed-list'
+      // , root: '.container .current.row .timeline-centered'
+      , item: '.feed-card.template:first'
+      };
+
+    </script>
+    <script type="text/javascript" src="../example.js">
+    </script>
+    <script type="text/javascript" src="../admin.js">
+    </script>
+  </body>
+</html>
+</body>
+</html>

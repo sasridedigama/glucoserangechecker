@@ -1,0 +1,92 @@
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333333;
+  background: #fff;
+}
+
+h1{
+  color: #6DAF54;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400px;
+  margin: 0 0 10px 0;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+   color: #6DAF54; 
+}
+
+div{
+    text-align:center;
+}
+
+.img-center {
+  margin:0 auto;
+  display:block;
+}
+
+.backarrow{
+    height: 30px;
+    width: 30px;
+    position:absolute;
+    top:2%;
+    left:10%;
+}
+
+.img-center-camera {
+  margin:0 auto;
+  display:block;
+  margin-top: 30px;
+}
+
+.fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+
+.jumbotron {
+    background-color: white;
+    color: #6DAF54
+}
+
+.navbar {
+    background-color: white;
+}
+
+.card-header {
+    text-align: center;
+    font-weight: bold;
+    background-color: white;
+    font-size: 1.4rem;
+    
+}
+
+.card-body {
+    text-align: center;
+    font-size: 1rem
+}
+
+.card {
+    margin-bottom: 40px;
+  box-shadow: 1px 1px #888888;
+}
+
+.card img{
+    width: 70px;
+    height: 70px;
+    margin-right: 30px;
+    margin-left: 35px;
+}
+
+.btn {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
