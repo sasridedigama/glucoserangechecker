@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Understanding Comparison</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.5/jquery.csv.min.js"></script>
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+	<link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+					crossorigin="anonymous">
+					
+		
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-rating/1.5.0/bootstrap-rating.js"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.min.js" crossorigin="anonymous"></script>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/sugar/2.0.6/sugar.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.2.2/dist/latest/bootstrap-autocomplete.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-rating/1.5.0/bootstrap-rating.css"></link>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+    
+    <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+
+
+      #demo_0 {
+        height: 10em;
+      }
+
+      .basic-demos .card-body {
+        min-height: 13em;
+        position: relative;
+      }
+
+      .iso-comparison {
+        height: 100%;
+        max-width: 20ex;
+        min-height: 350px;
+
+      }
+
+      .iso-comparison .tick text {
+        font-size: 1.5em;
+      }
+
+      .iso-comparison .threshold {
+        height: 100%;
+      }
+
+      .iso-comparison .upper-threshold,
+      .iso-comparison .lower-threshold {
+        height: 50%;
+      }
+
+      .thresholds rect {
+        background: none;
+        border: 1px solid blue;
+        stroke: black;
+        fill: none;
+      }
+			.values line {
+        stroke-width: 1px;
+        stroke: blue;
+      }
+
+      .isAligned {
+      }
+
+      .isAligned .outside {
+        fill: none;
+      }
+      .isAligned .inside {
+        fill: #69A246;
+      }
+
+      .isUnaligned {
+      }
+
+      .isUnaligned .outside {
+        fill: none;
+      }
+      .isUnaligned .inside {
+        fill: #F9C81B;
+      }
+        .rotated{
+            transform: rotate(90deg);
+            margin-bottom: 0px;
+        }
+      
+        #display-result1 {
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        
+        #display-result2{
+             text-align: center;
+        }
+        
+        input {
+  border: 3px solid #AEAEAE;
+  text-align: center;
+}
+    
+        #upper{
+            position: fixed;
+  bottom: 30px;
+  right: 70px;
+  width: 300px;
+        }
+        
+        .jumbotron{
+            margin-left: 20px;
+        }
+      
+  </style>
+<script type="text/javascript">
+      // Create a random number
+var upperThreshold = 0;
+var lowerThreshold = 0;
+var percent = 0.30;
+
+
+// Compare the number that user entered against the mystery number
+function compareNumber() {
+  // get the meter and sensor value that is present in the input box
+  var meterValue = parseInt(document.getElementById("meterValue").value);
+  var sensorValue = document.getElementById("sensorValue").value;
+  // Find the upper and lower threshold for metervalue > 80
+  if (meterValue >= 80){
+      upperThreshold = meterValue + (0.30*meterValue);
+      lowerThreshold = meterValue - (0.30*meterValue);
+  }
+  else if(meterValue < 80) {
+      upperThreshold = 30 + meterValue;
+      lowerThreshold =  meterValue - 30;
+  }
+  console.log(meterValue);
+  console.log(upperThreshold);
+  console.log(lowerThreshold);
+  // If its outside the range
+  if (sensorValue > upperThreshold || sensorValue < lowerThreshold)   {
+  
+  document.getElementById("display-result1").style.color = '#d00';
+  document.getElementById("display-result1").innerHTML="Your CGM reading is outside the acceptable range.";
+  document.getElementById("display-result2").innerHTML="Replace sensor if problem persists."; 
+  } 
+  // if its within the range
+  else {
+  document.getElementById("display-result1").style.color = ' #69A246';
+  document.getElementById("display-result1").innerHTML="Your sensor is within the acceptable range";
+  document.getElementById("display-result2").innerHTML="";  
+  }
+  
+}
+
+    window.onload = function() {
+  compareNumber();
+};
+    </script>
+    
+     <script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</head>
+
+<body>
+  
+     
+     <div class="container" style="margin-top:30px">
+    
+    <a onclick="goBack()"><img class="backarrow" src="images/backarrow.png"></a>
+    
+         <br>
+    
+<div class="text-center" style="margin-bottom:0">
+  <h1>Understanding Range</h1>
+    <br>
+    
+</div>
+
+<div class="row">
+     <div class="col-6">
+        <h6 style="text-align: center">CGM Reading</h6>
+        <img class="img-center" src="images/cgm.png">
+         <input disabled="enabled" id="sensorValue" class="demo_0_cgm" value="140" style="visibility: hidden" />
+    </div>
+     <div class="col-6">
+        <h6 style="text-align: center">Meter Reading</h6>
+         <br>
+          <input  type="number" min="40" max="400" class="demo_0_other" id="meterValue" oninput="compareNumber()"  value="215" style="width: 100px;"/>
+    </div>
+  </div>
+
+         
+         
+         
+      <div class="row">
+       
+            <div class="col-sm-12">
+              
+                
+                <div>  
+                
+            <p id="display-result1"></p>
+            <p id="display-result2"></p>
+                    
+                </div>
+          
+                <div class = "rotated">
+              <div class="iso-comparison" data-range="30" data-cgm-target=".demo_0_cgm" data-other-target=".demo_0_other" id="demo_0">
+              </div>
+                </div>
+                
+                
+                
+
+<div class="row" id="upper">
+    <div class="jumbotron" style="margin-bottom:0">
+ <a href="rangeexplanation.html">Learn more about accuracy range.</a>
+</div>
+     <div class="col-6">
+<button class="w3-btn w3-green" onclick="location.href='camera3.html';" >Try Again</button>    
+    </div>
+    <div class="col-6">
+<button class="w3-btn w3-green" onclick="location.href='getstarted5.html';" >Sensor Request (2)</button> 
+    </div>
+    </div>
+                
+                
+                <div class="threshold">
+                  <div class="upper-threshold">
+                    <div class="out-range">
+                    </div>
+                    <div class="in-range">
+                    </div>
+                  </div>
+                  <div class="lower-threshold">
+                    <div class="out-range">
+                    </div>
+                    <div class="in-range">
+                    </div>
+                  </div>
+                </div>
+               </div>
+          
+          
+               
+         
+          
+          </div>
+         
+        
+
+            
+        </div>
+    
+    </div>
+
+    <script type="text/javascript">
+      var Page = {
+
+      root: '.current.feed-list'
+      // , root: '.container .current.row .timeline-centered'
+      , item: '.feed-card.template:first'
+      };
+
+    </script>
+    <script type="text/javascript" src="comparison-widget.js">
+    </script>
+ 
+<script type="text/javascript" src="/comparisontext.js">
+    </script>
+  </body>
+</html>
+</body>
+</html>
